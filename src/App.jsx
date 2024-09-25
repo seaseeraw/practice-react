@@ -7,7 +7,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Project } from "./components/Project";
 import { Skill } from "./components/Skill";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
@@ -18,26 +18,38 @@ function App() {
         <label htmlFor="darkMode">
           <i className="fa-solid fa-circle-half-stroke"></i>
         </label>
+        <Navbar/>
+        <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Hero/>}/>
+          <Route path="skills" element={<Skill/>}/>
+          <Route path="about" element={<About/>}/>
+          <Route path="projects" element={<Project/>}/>
+          <Route path="contact" element={<Contact/>}/>
+
+          
+        </Routes>
+        </BrowserRouter>
         {/* <!-- navbar --> */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* <!-- hero section  --> */}
-        <Hero />
+        {/* <Hero /> */}
 
         {/* <!-- skills section  --> */}
-        <Skill />
+        {/* <Skill /> */}
 
         {/* <!-- project section  --> */}
-        <Project />
+        {/* <Project /> */}
 
         {/* <!-- about me section  --> */}
-        <About />
+        {/* <About /> */}
 
         {/* <!-- Contact section  --> */}
-        <Contact />
+        {/* <Contact /> */}
 
         {/* <!-- Footer section  --> */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
